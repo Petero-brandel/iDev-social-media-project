@@ -1,0 +1,27 @@
+
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Edit Profile{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>Edit Profile</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_bio">Your stack:</label>
+            {{ form.bio }}
+        </div>
+        <div class="form-group">
+            <label for="id_image">Profile Picture:</label>
+            {{ form.image }}
+        </div>
+        <div class="form-group">
+            <label for="id_cover_photo">Cover Photo:</label>
+            {{ form.cover_photo }}
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+
+{% endblock content %}
